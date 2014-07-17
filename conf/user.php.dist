@@ -1,0 +1,4 @@
+<?php
+
+# Only the following users are allowed to use the webservice
+$users[] = 'allowes-user@host.domain';

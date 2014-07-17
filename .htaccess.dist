@@ -1,0 +1,11 @@
+## Apache access file configuration
+
+## You should disable Indexes and MultiViews either here or in the
+## global config. Symlinks maybe needed for URL rewriting.
+#Options -Indexes -MultiViews +FollowSymLinks
+
+## make sure nobody gets the htaccess, README, LICENSE or VERSION files
+<Files ~ "^([\._]ht|README\.rst$|VERSION$|LICENSE$)">
+    Order allow,deny
+    Deny from all
+</Files>

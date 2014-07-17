@@ -1,0 +1,6 @@
+/sync-*
+/conf/*.php
+!/conf/*.dist
+/.htaccess
+/.htpasswd
+

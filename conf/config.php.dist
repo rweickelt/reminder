@@ -1,0 +1,9 @@
+<?php
+# Config file
+
+$conf['server'] = 'server.domain:143';
+$conf['user'] = 'email-username';
+$conf['password'] = 'email-password';
+$conf['email'] = 'sender@host.domain';
+$conf['title'] = 'reminder';
+

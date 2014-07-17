@@ -1,0 +1,17 @@
+#!/bin/bash
+# Synchronizes the whole project with a remote server.
+# This is useful especially for development.
+
+# Test account
+HOST='ftp.domain'
+USER='ftp-user'
+# Password is given in ~./netrc
+
+lftp -e "
+set ftp:ssl-force true
+set ftp:ssl-protect-data true
+mirror --reverse --delete --use-cache src /src --parallel=10
+mirror --reverse --delete --use-cache conf /conf --parallel=10
+mirror --reverse --delete --no-recursion --use-cache -x sync -x ^\.git/$ -x \.gitignore$ . /
+bye
+" "$USER@$HOST"
